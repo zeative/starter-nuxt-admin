@@ -1,0 +1,17 @@
+@import 'tailwindcss';
+@import '@nuxt/ui';
+
+@theme {
+  --font-display: 'Onest', system-ui, 'Inter';
+}
+
+@layer base {
+  body {
+    @apply font-display;
+  }
+
+  img,
+  i {
+    @apply select-none;
+  }
+}
