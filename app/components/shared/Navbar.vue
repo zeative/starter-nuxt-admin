@@ -14,17 +14,20 @@ const items: TabsItem[] = [
 </script>
 
 <template>
-  <UDashboardNavbar title="Inbox">
+  <UDashboardNavbar title="Dashboard" class="!px-4">
     <template #leading>
-      <UDashboardSidebarCollapse />
-    </template>
-
-    <template #trailing>
-      <UBadge label="4" variant="subtle" />
+      <UDashboardSidebarCollapse class="text-lg mr-1" />
     </template>
 
     <template #right>
-      <UTabs :items="items" default-value="all" size="sm" class="w-40" :content="false" />
+      <UAvatar
+        src="https://github.com/zeative.png"
+        alt="Zeative"
+        loading="eager"
+        :chip="{
+          inset: true,
+        }"
+      />
     </template>
   </UDashboardNavbar>
 </template>
