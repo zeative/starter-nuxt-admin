@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import consts from '~/config/consts';
+
 defineProps({
   hideTitle: {
     type: Boolean,
@@ -9,11 +11,11 @@ defineProps({
 
 <template>
   <div class="transition-none relative flex gap-2 select-none" :class="{ 'mx-auto': hideTitle }">
-    <NuxtImg src="/skh.png" alt="logo-icon" class="w-6 h-fit mt-0.5" />
+    <NuxtImg :src="consts.brandImage" alt="logo-icon" class="w-6 h-fit mt-0.5" />
     <h6 class="is-drawer-close:hidden text-xs font-black tracking-wider" v-if="!hideTitle">
-      <span>MASTER ORGANISASI</span>
+      <span>{{ consts.brandTopTitle }}</span>
       <br />
-      <span>PERANGKAT DAERAH</span>
+      <span>{{ consts.brandBottomTitle }}</span>
     </h6>
   </div>
 </template>

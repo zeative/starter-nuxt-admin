@@ -1,7 +1,12 @@
 <script setup>
+import { useParallax } from '@vueuse/core';
+
 definePageMeta({
   layout: 'dashboard',
 });
+
+const container = ref(null);
+const { tilt, roll, source } = useParallax(container);
 </script>
 
 <template>

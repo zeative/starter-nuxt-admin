@@ -7,7 +7,14 @@ export default defineNuxtConfig({
 
   css: ['./app/assets/css/main.css'],
 
-  modules: ['@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@pinia/nuxt', '@nuxt/ui'],
+  modules: [
+    '@nuxt/fonts',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@pinia/nuxt',
+    '@nuxt/ui',
+    '@vueuse/nuxt',
+  ],
 
   vite: {
     plugins: [tailwindcss()],

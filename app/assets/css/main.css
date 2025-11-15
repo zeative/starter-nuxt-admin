@@ -14,4 +14,8 @@
   i {
     @apply select-none;
   }
+
+  button {
+    @apply cursor-pointer;
+  }
 }

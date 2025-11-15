@@ -6,8 +6,7 @@ useHead({
 
 <template>
   <NuxtLayout>
-    <NuxtLoadingIndicator />
-
+    <NuxtLoadingIndicator :throttle="0" />
     <UApp>
       <NuxtPage />
     </UApp>
