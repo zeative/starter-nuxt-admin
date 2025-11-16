@@ -1,4 +1,10 @@
+import type { NuxtConfig } from 'nuxt/schema';
+
 export default {
-  title: 'Master Data Diskominfo Jateng',
-  description: 'Aplikasi manajemen data diskominfo jateng',
-};
+  head: {
+    charset: 'utf-16',
+    viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+
+    title: 'Master Organisasi Perangkat Daerah | Diskominfo Sukoharjo',
+  },
+} satisfies NuxtConfig['app'];

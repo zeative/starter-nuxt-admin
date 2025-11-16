@@ -5,6 +5,5 @@ export type LayoutsType = {
 };
 
 export const useLayouts = (props: LayoutsType) => {
-  definePageMeta(props.page);
-
+  definePageMeta({ ...props.page });
 };

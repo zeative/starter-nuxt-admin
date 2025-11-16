@@ -13,9 +13,6 @@ import Sidebar from '~/components/shared/Sidebar.vue';
       </template>
 
       <template #body>
-        <nuxt-link href="/dashboard">piapaiiap</nuxt-link>
-        <nuxt-link href="/test">skdknskdj</nuxt-link>
-
         <slot />
       </template>
     </UDashboardPanel>

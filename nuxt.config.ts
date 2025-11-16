@@ -1,4 +1,6 @@
 import tailwindcss from '@tailwindcss/vite';
+import metadata from './app/config/metadata';
+
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -7,16 +9,13 @@ export default defineNuxtConfig({
 
   css: ['./app/assets/css/main.css'],
 
-  modules: [
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxt/image',
-    '@pinia/nuxt',
-    '@nuxt/ui',
-    '@vueuse/nuxt',
-  ],
+  modules: ['@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@pinia/nuxt', '@nuxt/ui', '@vueuse/nuxt'],
 
   vite: {
     plugins: [tailwindcss()],
+  },
+
+  app: {
+    ...metadata,
   },
 });
