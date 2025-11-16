@@ -1,12 +1,11 @@
 <script setup lang="ts">
-import Brand from './Brand.vue';
 import sidebars from '~/config/sidebars';
 </script>
 
 <template>
   <UDashboardSidebar collapsible :ui="{ footer: 'border-t border-default' }">
     <template #header="{ collapsed }">
-      <Brand :hideTitle="collapsed" />
+      <SharedBrand :hideTitle="collapsed" />
     </template>
 
     <template #default="{ collapsed }">

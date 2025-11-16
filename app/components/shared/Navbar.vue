@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { TabsItem } from '@nuxt/ui';
 import { useFullscreen } from '@vueuse/core';
 
 const { toggle } = useFullscreen();

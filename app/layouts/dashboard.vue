@@ -1,15 +1,10 @@
-<script setup>
-import Navbar from '~/components/shared/Navbar.vue';
-import Sidebar from '~/components/shared/Sidebar.vue';
-</script>
-
 <template>
   <UDashboardGroup>
-    <Sidebar />
+    <SharedSidebar />
 
     <UDashboardPanel>
       <template #header>
-        <Navbar />
+        <SharedNavbar />
       </template>
 
       <template #body>
