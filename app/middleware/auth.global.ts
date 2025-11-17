@@ -2,18 +2,18 @@ import consts from '~/config/consts';
 
 const AUTH_PAGE = ['/auth/login', '/auth/forgot', '/auth/reset'];
 
-export default defineNuxtRouteMiddleware(async (to, from) => {
+export default defineNuxtRouteMiddleware((to, from) => {
   const token = useCookie(consts.cookieName);
 
-  if (!token.value) {
+  if (!token.value && !AUTH_PAGE.includes(to.path)) {
     return navigateTo('/auth/login');
   }
 
-  if (to.params.auth && !AUTH_PAGE.includes(to.path)) {
-    return abortNavigation();
+  if (token.value && to.path === '/') {
+    return navigateTo('/dashboard');
   }
 
-  if (token.value && to.path == '/') {
+  if (token.value && AUTH_PAGE.includes(to.path)) {
     return navigateTo('/dashboard');
   }
 });
