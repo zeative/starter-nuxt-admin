@@ -4,7 +4,12 @@ import sidebars from '~/config/sidebars';
 </script>
 
 <template>
-  <UDashboardSidebar collapsible :ui="{ footer: 'border-t border-default' }" :hidden="consts.sidebar.hideSidebar">
+  <UDashboardSidebar
+    collapsible
+    :ui="{ footer: 'border-t border-default' }"
+    :hidden="consts.sidebar.hideSidebar"
+    v-once
+  >
     <template #header="{ collapsed }">
       <SharedBrand :hideTitle="collapsed" :hidden="!consts.sidebar.showBrandLogo" />
     </template>

@@ -5,8 +5,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="flex flex-col">
-    <h1>Test Aja</h1>
-    <NuxtTime :datetime="Date.now()" locale="id-ID" />
-  </div>
+ <h3>jajkaska</h3>
+ 
+ <nav>sakk</nav>
 </template>

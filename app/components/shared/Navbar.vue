@@ -7,7 +7,7 @@ const { isOnline } = useNetwork();
 </script>
 
 <template>
-  <UDashboardNavbar title="Dashboard" class="!px-4" :hidden="consts.navbar.hideNavbar">
+  <UDashboardNavbar title="Dashboard" class="!px-4" :hidden="consts.navbar.hideNavbar" v-once>
     <template #leading>
       <UDashboardSidebarCollapse class="text-lg mr-1" :hidden="!consts.navbar.showToggleSidebar" />
     </template>

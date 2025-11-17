@@ -18,7 +18,7 @@ export default {
     showBrandLogo: true,
     showSeacrhBar: true,
     showProfilePicture: true,
-    hideSidebar: false,
+    hideSidebar: false,  
   },
 
   footer: {
