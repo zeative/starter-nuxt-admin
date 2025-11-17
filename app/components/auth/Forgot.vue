@@ -10,26 +10,13 @@ const fields: AuthFormField[] = [
     name: 'email',
     type: 'email',
     label: 'Email',
-    placeholder: 'Masukan email...',
+    placeholder: 'Masukan email terdaftar...',
     required: true,
-  },
-  {
-    name: 'password',
-    label: 'Password',
-    type: 'password',
-    placeholder: 'Masukan password...',
-    required: true,
-  },
-  {
-    name: 'remember',
-    label: 'Remember me',
-    type: 'checkbox',
   },
 ];
 
 const schema = z.object({
   email: z.email('Email tidak valid!'),
-  password: z.string('Password wajib diisi!').min(8, 'Masukan minimal 8 karakter!'),
 });
 
 type Schema = z.output<typeof schema>;
@@ -57,10 +44,11 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
           <div class="flex mx-auto">
             <Brand />
           </div>
-          <h1 class="mt-6 mb-4 tracking-wider font-bold text-xl text-primary">Selamat datang Admin ~</h1>
+          <h1 class="mt-6 mb-4 tracking-wider font-bold text-xl text-primary">Lupa Password?</h1>
           <USeparator class="mb-3" />
         </template>
       </UAuthForm>
+      <small>Kembali ke <NuxtLink to="/auth/login">Login</NuxtLink></small>
     </UPageCard>
   </div>
 </template>

@@ -39,6 +39,8 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
     title: 'Berhasil ✅',
     description: 'Akun valid! Anda akan diarahkan ke Dashboard.',
   });
+
+  navigateTo('/dashboard');
 }
 </script>
 
@@ -61,6 +63,7 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
           <USeparator class="mb-3" />
         </template>
       </UAuthForm>
+      <small><NuxtLink to="/auth/forgot">Lupa password?</NuxtLink></small>
     </UPageCard>
   </div>
 </template>

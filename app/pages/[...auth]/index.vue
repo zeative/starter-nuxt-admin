@@ -1,6 +1,6 @@
 <script setup>
 const route = useRoute();
-const auth = route.params.auth.join('/');
+const auth = route.params?.auth?.join?.('/')
 </script>
 
 <template>

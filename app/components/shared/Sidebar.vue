@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import consts from '~/config/consts';
 import sidebars from '~/config/sidebars';
 </script>
 
 <template>
-  <UDashboardSidebar collapsible :ui="{ footer: 'border-t border-default' }">
+  <UDashboardSidebar collapsible :ui="{ footer: 'border-t border-default' }" :hidden="consts.sidebar.hideSidebar">
     <template #header="{ collapsed }">
-      <SharedBrand :hideTitle="collapsed" />
+      <SharedBrand :hideTitle="collapsed" :hidden="!consts.sidebar.showBrandLogo" />
     </template>
 
     <template #default="{ collapsed }">
@@ -16,6 +17,7 @@ import sidebars from '~/config/sidebars';
         variant="outline"
         block
         :square="collapsed"
+        :hidden="!consts.sidebar.showSeacrhBar"
       >
         <template v-if="!collapsed" #trailing>
           <div class="flex items-center gap-0.5 ms-auto">
@@ -52,6 +54,7 @@ import sidebars from '~/config/sidebars';
         variant="ghost"
         class="w-full"
         :block="collapsed"
+        :hidden="!consts.sidebar.showProfilePicture"
       />
     </template>
   </UDashboardSidebar>
