@@ -43,6 +43,7 @@ export default [
       label: 'Kelola Akses',
       icon: 'i-lucide-monitor-cog',
       href: '/integration/scopes',
+      roles: ['admin', 'superadmin'],
     },
 
     {

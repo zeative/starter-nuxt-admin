@@ -5,7 +5,6 @@ definePageMeta({
 </script>
 
 <template>
- <h3>jajkaska</h3>
- 
- <nav>sakk</nav>
+  <h3>jajkaska</h3>
+  
 </template>

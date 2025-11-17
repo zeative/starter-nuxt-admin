@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   css: ['./app/assets/css/main.css'],
+  plugins: ['./app/plugins/casl'],
 
   modules: ['@nuxt/fonts', '@nuxt/icon', '@nuxt/image', '@pinia/nuxt', '@nuxt/ui', '@vueuse/nuxt'],
 
