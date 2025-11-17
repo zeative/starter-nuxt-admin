@@ -30,7 +30,7 @@ const { isOnline } = useNetwork();
         alt="Zeative"
         loading="eager"
         class="border"
-        :chip="{
+        :chip="consts.navbar.showOnlineStatus && {
           inset: true,
           color: isOnline ? 'success' : 'error',
         }"

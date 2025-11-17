@@ -8,6 +8,7 @@ export default {
     showThemeToggle: true,
     showFullscreenToggle: true,
     showProfilePicture: true,
+    showOnlineStatus: true,
     showToggleSidebar: true,
     showTitleSidebar: true,
     hideNavbar: false,
