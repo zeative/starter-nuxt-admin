@@ -1,7 +1,12 @@
 export default {
-  brandImage: '/skh.png',
-  brandTopTitle: 'MASTER ORGANISASI',
-  brandBottomTitle: 'PERANGKAT DAERAH',
+  brand: {
+    image: '/skh.png',
+    topTitle: 'MASTER ORGANISASI',
+    bottomTitle: 'PERANGKAT DAERAH',
+
+    showBrandImage: true,
+    showBrandTitle: true,
+  },
 
   // optional
   navbar: {

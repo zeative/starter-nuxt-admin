@@ -1,8 +1,18 @@
+import type { AuthenticationHandler } from '../../types/auth';
+import { readBody } from 'h3';
+
 export default {
-  login: async () => {
-    
+  login: async (props) => {
+    const body = await readBody(props);
+    return { slug: props.context.params?.slug, from: 'login', body };
   },
-  register: async () => {},
-  forgot: async () => {},
-  reset: async () => {},
-};
+  register: async (props) => {
+    return { slug: props.context.params?.slug, from: 'register' };
+  },
+  forgot: async (props) => {
+    return { slug: props.context.params?.slug, from: 'forgot' };
+  },
+  reset: async (props) => {
+    return { slug: props.context.params?.slug, from: 'reset' };
+  },
+} satisfies AuthenticationHandler;
