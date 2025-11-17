@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="transition-none relative flex gap-2 select-none" :class="{ 'mx-auto': hideTitle }">
+  <div class="transition-none relative flex gap-2 select-none" :class="{ 'mx-auto': hideTitle }" v-if="!consts.brand.hideBrand">
     <NuxtImg :src="consts.brand.image" alt="logo-icon" class="w-6 h-fit mt-0.5" v-if="consts.brand.showBrandImage" />
     <h6
       class="is-drawer-close:hidden text-xs font-black tracking-wider max-xl:line-clamp-1"
