@@ -18,7 +18,7 @@ export default {
     showBrandLogo: true,
     showSeacrhBar: true,
     showProfilePicture: true,
-    hideSidebar: false,  
+    hideSidebar: false,
   },
 
   footer: {
@@ -32,4 +32,10 @@ export default {
 
   cookieName: 'bearer-session.tokenize.master-opd',
   cookieExpire: 60 * 60 * 24,
+
+  auth: {
+    login: '',
+    forgot: '',
+    reset: '',
+  },
 };

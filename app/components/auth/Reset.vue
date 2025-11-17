@@ -7,29 +7,35 @@ const toast = useToast();
 
 const fields: AuthFormField[] = [
   {
-    name: 'email',
-    type: 'email',
-    label: 'Email',
-    placeholder: 'Masukan email...',
-    required: true,
-  },
-  {
-    name: 'password',
-    label: 'Password',
+    name: 'old_password',
+    label: 'Password lama',
     type: 'password',
-    placeholder: 'Masukan password...',
+    placeholder: 'Masukan password lama...',
     required: true,
   },
   {
-    name: 'remember',
-    label: 'Remember me',
-    type: 'checkbox',
+    name: 'new_password',
+    label: 'Password baru',
+    type: 'password',
+    placeholder: 'Masukan password baru...',
+    required: true,
+  },
+  {
+    name: 'confirm_new_password',
+    label: 'Ulangi password baru',
+    type: 'password',
+    placeholder: 'Konfirmasi password baru...',
+    required: true,
   },
 ];
 
 const schema = z.object({
-  email: z.email('Email tidak valid!'),
-  password: z.string('Password wajib diisi!').min(8, 'Masukan minimal 8 karakter!'),
+  old_password: z.string('Password lama wajib diisi!').min(8, 'Masukan minimal 8 karakter!'),
+  new_password: z.string('Password baru wajib diisi!').min(8, 'Masukan minimal 8 karakter!'),
+  confirm_new_password: z.string('Konfirmasi password wajib diisi!').min(8, 'Masukan minimal 8 karakter!'),
+}).refine((data) => data.new_password === data.confirm_new_password, {
+  message: 'Password baru dengan konfirmasi password tidak sama!',
+  path: ['confirm_new_password'],
 });
 
 type Schema = z.output<typeof schema>;
@@ -57,7 +63,7 @@ function onSubmit(payload: FormSubmitEvent<Schema>) {
           <div class="flex mx-auto">
             <Brand />
           </div>
-          <h1 class="mt-6 mb-4 tracking-wider font-bold text-xl text-primary">Selamat datang Admin ~</h1>
+          <h1 class="mt-6 mb-4 tracking-wider font-bold text-xl text-primary">Konfirmasi Reset Password!</h1>
           <USeparator class="mb-3" />
         </template>
       </UAuthForm>
