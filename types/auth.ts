@@ -1,3 +1,5 @@
+import type { EventHandlerRequest, H3Event } from 'h3';
+
 export type AuthenticationHandler = {
   login: (props: H3Event<EventHandlerRequest>) => Promise<object>;
   register: (props: H3Event<EventHandlerRequest>) => Promise<object>;

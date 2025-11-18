@@ -1,3 +1,5 @@
+import type { ConstsConfig } from '../../types/consts';
+
 export default {
   brand: {
     image: '/skh.png',
@@ -42,8 +44,15 @@ export default {
   },
 
   cookie: {
-    name: 'bearer-session.tokenize.master-opd',
-    expired: 60 * 60 * 24,
+    // Wajib pakai prefix "__Host-" untuk keamanan!
+    name: '__Host-session.tokenize.master-opd',
+    options: {
+      expires: new Date(Date.now() + 60 * 60 * 24 * 1000),
+      sameSite: 'strict',
+      httpOnly: true,
+      secure: true,
+      path: '/',
+    },
   },
 
   auth: {
@@ -51,4 +60,4 @@ export default {
     forgot: '',
     reset: '',
   },
-};
+} satisfies ConstsConfig;

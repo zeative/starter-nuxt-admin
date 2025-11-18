@@ -2,6 +2,7 @@
 import * as z from 'zod';
 import type { FormSubmitEvent, AuthFormField } from '@nuxt/ui';
 import Brand from '~/components/shared/Brand.vue';
+import consts from '~/config/consts';
 
 const toast = useToast();
 
@@ -34,13 +35,27 @@ const schema = z.object({
 
 type Schema = z.output<typeof schema>;
 
-function onSubmit(payload: FormSubmitEvent<Schema>) {
-  toast.add({
-    title: 'Berhasil ✅',
-    description: 'Akun valid! Anda akan diarahkan ke Dashboard.',
-  });
+async function onSubmit(payload: FormSubmitEvent<Schema>) {
+  try {
+    await $fetch('/api/auth/login', {
+      method: 'POST',
+      body: payload.data,
+    });
 
-  navigateTo('/dashboard');
+    toast.add({
+      title: 'Berhasil ✅',
+      description: 'Akun valid! Anda akan diarahkan ke Dashboard.',
+    });
+
+    refreshCookie(consts.cookie.name);
+    navigateTo('/dashboard');
+  } catch (error) {
+    toast.add({
+      color: 'error',
+      title: 'Email atau password salah!',
+      description: (error as any).message,
+    });
+  }
 }
 </script>
 
