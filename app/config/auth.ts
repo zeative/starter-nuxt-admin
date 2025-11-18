@@ -4,7 +4,7 @@ import { readBody } from 'h3';
 export default {
   login: async (props) => {
     const body = await readBody(props);
-    return { slug: props.context.params?.slug, from: 'login', body };
+    return { slug: props.context.params?.slug, from: 'login' };
   },
   register: async (props) => {
     return { slug: props.context.params?.slug, from: 'register' };
