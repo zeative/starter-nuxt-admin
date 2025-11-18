@@ -1,5 +1,4 @@
 import type { AuthenticationHandler } from '../../types/auth';
-import { readBody } from 'h3';
 
 export default {
   login: async (props) => {
